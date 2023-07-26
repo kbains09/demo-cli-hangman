@@ -41,8 +41,8 @@ def hangman():
         guess = input("Guess a letter: ").lower()
 
         if len(guess) != 1: or not guess.isalpha():
-            print("Invalid input. Try a single letter.")
-            continue
+        print("Invalid input. Try a single letter.")
+        continue
     
         if guess in guessed_letters:
             print("You already guessed that letter.")
@@ -55,5 +55,4 @@ def hangman():
             print("incorrect guess.")
 
 if__name__ == "__main__":
-    hangman()
-
+hangman()
