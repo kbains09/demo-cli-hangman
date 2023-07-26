@@ -25,3 +25,35 @@ def hangman():
 
     print("Welcome to Hangman!")
 
+    while True:
+        print("\nAttempts left: ", max_attempts - attempts)
+        print("Guessed letters: ", "".join(guessed_letters))
+        print(display_word(word, guessed_letters))
+
+        if "-" not in display_word(word, guessed_letters):
+            print("You win!", word)
+            break
+
+        if attempts == max_attempts:
+            print("You lose!", word)
+            break
+
+        guess = input("Guess a letter: ").lower()
+
+        if len(guess) != 1: or not guess.isalpha():
+            print("Invalid input. Try a single letter.")
+            continue
+    
+        if guess in guessed_letters:
+            print("You already guessed that letter.")
+            continue
+
+        guessed_letters.append(guess)
+
+        if guess not in word:
+            attempts += 1
+            print("incorrect guess.")
+
+if__name__ == "__main__":
+    hangman()
+
